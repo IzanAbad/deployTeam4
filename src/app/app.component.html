@@ -1,0 +1,35 @@
+<div class="cabecera">
+  <nav id="navegador" class="navbar navbar-expand navbar-dark bd-dark">
+    <a href="#" class="navbar-brand">Hotel Searcher</a>
+
+    <ul class="navbar-nav me-auto" routerLinkActive="active">
+      <li class="navbar-item">
+        <a class="nav-link" routerLink="busqueda">Búsqueda</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ms-auto" *ngIf="isLoggedIn==false">
+      <li class="nav-item">
+        <a href="/signup" class="nav-link" routerLink="signup">Registrarse</a>
+      </li>
+      <li class="nav-item">
+        <a href="/login" class="nav-link last-item" routerLink="login">Entrar</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ms-auto" *ngIf="isLoggedIn==true">
+      <li class="nav-item">
+        <a href="/profile" class="nav-link" routerLink="profile">Perfil</a>
+      </li>
+      <li class="nav-item">
+        <a href="/busqueda" class="nav-link last-item" routerLink="busqueda" (click)="logOut()">Salir</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+
+

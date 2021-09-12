@@ -1,0 +1,9 @@
+.container {height: 640px;
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;}
+.titulo {height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;}

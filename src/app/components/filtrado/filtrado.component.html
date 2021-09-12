@@ -1,0 +1,105 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col city"><h2>Mostrando hoteles en {{currentPoblation.nombre}}</h2></div>
+  </div>
+
+  <div class="row">
+    <div class="col-2 filtrado overflow-auto">
+      <div class="row row1">
+        <h5 style="text-align: center;"><strong>Filtros</strong></h5>
+        <button (click)="aplicarFiltros()" class="btn btn-primary">Aplicar</button>
+      </div>
+      <div class="category apartado">
+        <label class="lbl_apartado"><strong>Categoría: </strong></label>
+        <form class="formCat">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="hotel_filtrado.categoria[0]" value="1" [(ngModel)]="hotel_filtrado.categoria[0]">
+            <label class="form-check-label">1 estrella</label>
+          </div>
+          <div *ngFor="let num of listaKm" class="form-check">
+            <input class="form-check-input" type="checkbox" name="hotel_filtrado.categoria[{{listaKm.indexOf(num)+1}}]"
+            value="{{listaKm.indexOf(num)+2}}" [(ngModel)]="hotel_filtrado.categoria[listaKm.indexOf(num)+1]">
+            <label class="form-check-label">{{listaKm.indexOf(num)+2}} estrellas</label>
+          </div>
+        </form>
+      </div>
+      <div class="price apartado">
+        <label class="lbl_apartado"><strong>Rango de Precios: </strong></label>
+        <div class="div_price">
+          <label class="lbl_price" for="sel_min">Mínimo: </label>
+          <select id="sel_min" class="form-select form-select-sm" [(ngModel)]="hotel_filtrado.precio_min">
+            <option selected value="0">Default</option>
+            <option value="10">10€</option>
+            <option value="50">50€</option>
+            <option value="100">100€</option>
+          </select>
+        </div>
+        <div class="div_price">
+          <label class="lbl_price" for="sel_max">Máximo: </label>
+          <select id="sel_max" class="form-select form-select-sm" [(ngModel)]="hotel_filtrado.precio_max">
+            <option selected value="0">Default</option>
+            <option value="50">50€</option>
+            <option value="100">100€</option>
+            <option value="200">200€</option>
+          </select>
+        </div>
+      </div>
+      <div class="valoration apartado">
+        <label class="lbl_apartado"><strong>Valoración: </strong></label>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="basico" name="hotel_filtrado.valoracion[0]"
+          [(ngModel)]="hotel_filtrado.valoracion[0]">
+          <label class="form-check-label">Básico</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="bien" name="hotel_filtrado.valoracion[1]"
+          [(ngModel)]="hotel_filtrado.valoracion[1]">
+          <label class="form-check-label">Bien</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="muybien" name="hotel_filtrado.valoracion[2]"
+          [(ngModel)]="hotel_filtrado.valoracion[2]">
+          <label class="form-check-label">Muy Bien</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="excelente" name="hotel_filtrado.valoracion[3]"
+          [(ngModel)]="hotel_filtrado.valoracion[3]">
+          <label class="form-check-label">Excelente</label>
+        </div>
+      </div>
+      <div class="distance apartado">
+        <label class="lbl_apartado"><strong>Distancia al Centro: </strong></label>
+        <div *ngFor="let km of listaKm" class="form-check">
+          <input class="form-check-input" type="radio" value="{{km}}" name="dist" [(ngModel)]="hotel_filtrado.distancia">
+          <label class="form-check-label">Menos de {{km}} km</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" value="11" name="dist" [(ngModel)]="hotel_filtrado.distancia">
+          <label class="form-check-label">Más de 10 km</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="mapita col-7">
+      <google-map id="map" width="100%" height="100%" [center]="currentCenter" [zoom]="13">
+        <map-marker *ngFor="let marker of markers" [position]="marker.position" [label]="marker.label"
+        [options]="marker.options"></map-marker>
+      </google-map>
+    </div>
+
+    <div class="col listado overflow-auto">
+      <div class="hotelito container-fluid" *ngFor="let hotel of listaHotelesFiltrados">
+        <div class="row hote_row">
+          <div class="col">
+            <h4 (click)="goHotel(hotel.nombre)" class="name_hotel">{{listaHotelesFiltrados.indexOf(hotel)+1}}. {{hotel.nombre}}</h4>
+          </div>
+          <div class="col col-cat">
+            <svg *ngFor="let list of listaCategorias[listaHotelesFiltrados.indexOf(hotel)]" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+              <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

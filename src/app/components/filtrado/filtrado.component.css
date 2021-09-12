@@ -1,0 +1,28 @@
+.filtrado {border: 2px solid;
+  border-radius: 5px;}
+.filtrado, .mapita, .listado {margin-bottom: 7px;}
+.city {margin-bottom: 10px;}
+.apartado {margin-left: 5px;}
+.row {max-height: 100%;}
+.row1 {margin-left: 1.3px;
+  width: 100%;}
+.div_price {display: flex;
+  flex-direction: row;
+  align-items: center;}
+.lbl_price {font-size:small;
+  margin-right: 5px;}
+.lbl_apartado {margin-top: 5px;
+  margin-bottom: 5px;}
+.form-select-sm {width: 100px;}
+.hotelito {border: 2px solid black;
+  border-radius: 5px;
+  margin-bottom: 10px;}
+.col-cat {padding-top: 6px;}
+.estrellas {-webkit-text-stroke: 0.3px black;
+  font-size: large;
+  font-weight: bold;
+  color: yellow;
+  margin-right: 5px;}
+.name_hotel {padding-top: 5px;
+  margin-right: 10px;}
+.bi-star-fill {padding-bottom: 5px;}

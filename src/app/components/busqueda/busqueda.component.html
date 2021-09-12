@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="titulo">
+    <h1>HOTEL SEARCHER</h1>
+  </div>
+  <div class="input-group">
+    <input type="text" class="form-control" placeholder="Search Cities..." [(ngModel)]="ciudad"/>
+    <div class="input-group-append">
+      <button (click)="buscar(ciudad)" class="btn btn-outline-secondary" type="button">Search</button>
+    </div>
+  </div>
+</div>

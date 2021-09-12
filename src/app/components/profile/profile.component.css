@@ -1,0 +1,15 @@
+.container {display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 500px;}
+.image_div {width: 200px;
+  height: 200px;
+  margin-right: 10px;
+  padding-top: 50px;
+  text-align: center;}
+.datos_div {width: 400px;}
+.ap {display: flex;
+  flex-direction: row;}
+.col-form-label {width: 180px;}
+#staticHistory {margin-top: 5px;
+  resize: none;}
