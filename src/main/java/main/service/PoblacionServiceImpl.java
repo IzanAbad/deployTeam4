@@ -10,12 +10,6 @@ import main.dto.Poblacion;
 import main.dto.Categoria;
 import main.dto.Valoracion;
 
-/*
- * 	@autor Diego Manriquez Canales
- * 	@version 0.2
- * 
- */
-
 @Service
 public class PoblacionServiceImpl implements IPoblacionService {
 

@@ -3,12 +3,6 @@ package main.service;
 import java.util.List;
 import main.dto.Hotel;
 
-/*
- * 	@autor Diego Manriquez Canales
- * 	@version 0.1
- * 
- */
-
 public interface IHotelService {
 	
 	public List<Hotel> listar_hoteles();

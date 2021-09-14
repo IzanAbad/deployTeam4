@@ -9,7 +9,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="usuarios")
 public class Usuario {
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
@@ -38,3 +38,4 @@ public class Usuario {
 		this.password = password;
 	}
 }
+

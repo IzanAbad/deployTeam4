@@ -7,12 +7,6 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-/*
- * 	@autor Diego Manriquez Canales
- * 	@version 0.1
- * 
- */
-
 @Service
 public class HotelServiceImpl implements IHotelService {
 	

@@ -11,12 +11,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-/*
- * 	@autor Diego Manríquez Canales
- * 	@version 0.1
- * 
- */
-
 @Entity
 @Table(name="poblaciones")
 public class Poblacion {

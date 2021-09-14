@@ -13,7 +13,7 @@ import main.dto.Usuario;
 
 @Service
 public class UsuarioDetailsServiceImpl implements UserDetailsService {
-
+	
 	private IUsuarioDAO iUsuarioDAO;
 
 	public UsuarioDetailsServiceImpl(IUsuarioDAO iUsuarioDAO) {

@@ -4,12 +4,6 @@ import java.util.List;
 import main.dto.Poblacion;
 import main.dto.Hotel;
 
-/*
- * 	@autor Diego Manriquez Canales
- * 	@version 0.2
- * 
- */
-
 public interface IPoblacionService {
 
 	public List<Poblacion> listar_poblaciones();

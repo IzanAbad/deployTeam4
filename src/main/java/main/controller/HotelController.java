@@ -12,9 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @RestController
 @RequestMapping("/api")
@@ -70,6 +69,7 @@ public class HotelController {
 		hot.setValoracion(hotel.getValoracion());
 		hot.setUbi_lat(hotel.getUbi_lat());
 		hot.setUbi_long(hotel.getUbi_long());
+		hot.setDireccion(hotel.getDireccion());
 		return hotelServ.actualizar_hotel(hot, id_pob);
 	}
 	

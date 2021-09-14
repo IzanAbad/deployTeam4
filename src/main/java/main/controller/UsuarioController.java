@@ -42,4 +42,5 @@ public class UsuarioController {
 	public Usuario getUsuario(@PathVariable String username) {
 		return iUsuarioDAO.findByUsername(username);
 	}
+	
 }

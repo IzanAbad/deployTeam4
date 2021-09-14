@@ -10,12 +10,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Enumerated;
 
-/*
- * 	@Autor Diego Manriquez Canales
- * 	@Version 0.1
- * 
- */
-
 @Entity
 @Table(name="hoteles")
 public class Hotel {
@@ -45,6 +39,8 @@ public class Hotel {
 	private String imagen;
 	// El telefono de contacto sera un String de 9 caracteres
 	private String telefono;
+	// La direccion sera un string
+	private String direccion;
 	// El identificador de la poblacion como foreign key resulta en un objeto Poblacion
 	@ManyToOne
 	@JoinColumn(name="id_poblacion")
@@ -65,11 +61,12 @@ public class Hotel {
 		this.valoracion=Valoracion.basico;
 		this.imagen="";
 		this.telefono="";
+		this.direccion="";
 	}
 
 	// Constructor Principal
 	public Hotel(int id_hotel, String nombre, Categoria categoria, double ubi_lat, double ubi_long, float precio_noche,
-			Valoracion valoracion, String imagen, String telefono, Poblacion poblacion) {
+			Valoracion valoracion, String imagen, String telefono, String direccion, Poblacion poblacion) {
 		this.id_hotel = id_hotel;
 		this.nombre = nombre;
 		this.categoria = categoria;
@@ -79,7 +76,8 @@ public class Hotel {
 		this.valoracion = valoracion;
 		this.imagen = imagen;
 		this.telefono = telefono;
-		this.poblacion=poblacion;
+		this.direccion = direccion;
+		this.poblacion = poblacion;
 	}
 	
 	/*
@@ -165,6 +163,15 @@ public class Hotel {
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
+	
+	// Direccion
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}	
 
 	// Objeto de la poblacion donde esta ubicado el hotel
 	public Poblacion getPoblacion() {
@@ -184,5 +191,6 @@ public class Hotel {
 		return "Hotel [id_hotel=" + id_hotel + ", nombre=" + nombre + ", categoria=" + categoria + ", ubi_lat="
 				+ ubi_lat + ", ubi_long=" + ubi_long + ", precio_noche=" + precio_noche + ", valoracion=" + valoracion
 				+ ", imagen=" + imagen + ", telefono=" + telefono + ", poblacion=" + poblacion + "]";
-	}	
+	}
+
 }
