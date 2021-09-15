@@ -1,6 +1,7 @@
 package main.security;
 
 import static main.security.Constants.LOGIN_URL;
+import static main.security.Constants.REGISTER_URL;
 import static main.security.Constants.SEARCH_URL1;
 import static main.security.Constants.SEARCH_URL2;
 import static main.security.Constants.SEARCH_URL3;
