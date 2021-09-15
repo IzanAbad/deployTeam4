@@ -5,6 +5,7 @@ public class Constants {
 	// Spring Security
 
 	public static final String LOGIN_URL = "/login";
+	public static final String REGISTER_URL = "/users";
 	public static final String SEARCH_URL1 = "/api/poblaciones/nombre/{nombre}";
 	public static final String SEARCH_URL2 = "/api/poblaciones/{nombre}/hoteles";
 	public static final String SEARCH_URL3 = "/api/hoteles/{id_hotel}";
