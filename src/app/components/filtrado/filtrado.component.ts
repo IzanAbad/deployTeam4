@@ -125,9 +125,9 @@ export class FiltradoComponent implements OnInit {
     }
   }
 
-  goHotel(hotel: number, lat: number, long: number){
+  goHotel(hotel: number, lat: number, long: number, poblacion: string){
     // Metodo para ir a la pagina de cada hotel
-    this.route.navigate(["hotel-info/"+hotel+"/"+lat+"/"+long]);
+    this.route.navigate(["hotel-info/"+hotel+"/"+lat+"/"+long+"/"+poblacion]);
   }
 
   aplicarFiltros() {

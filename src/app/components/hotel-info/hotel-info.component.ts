@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Hotel } from 'src/app/models/hotel.model';
 import { HotelService } from 'src/app/services/hotel.service';
 
@@ -23,6 +23,9 @@ export class HotelInfoComponent implements OnInit {
     telefono: '',
     direccion: '',
   }
+
+  // Nombre de la población para poder volver al mapa general
+  poblacion: string = "";
 
   // Calculamos la distancia del hotel al centro de la ciudad
   distancia: number = 0;
@@ -50,12 +53,13 @@ export class HotelInfoComponent implements OnInit {
     }
   }
 
-  constructor(private acRoute: ActivatedRoute, private hotServ: HotelService) { }
+  constructor(private acRoute: ActivatedRoute, private hotServ: HotelService, private router: Router) { }
 
   ngOnInit(): void {
     this.hotel.id_hotel = this.acRoute.snapshot.params.id;
     this.focus_point.lat = parseFloat(this.acRoute.snapshot.params.lat);
     this.focus_point.lng = parseFloat(this.acRoute.snapshot.params.long);
+    this.poblacion = this.acRoute.snapshot.params.pob;
 
     this.hotServ.getHotel(this.hotel.id_hotel).subscribe(hotelito => {this.hotel = hotelito;
       this.crearMarkersYNums();});;
@@ -134,6 +138,10 @@ export class HotelInfoComponent implements OnInit {
       default:
         return 5;
     }
+  }
+
+  volver(ciudad: string){
+    this.router.navigate(["filtros/"+ciudad]);
   }
 
 }

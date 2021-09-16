@@ -94,7 +94,7 @@
 
     <div class="col listado overflow-auto">
       <div class="hotelito container-fluid" *ngFor="let hotel of listaHotelesFiltrados">
-        <div (click)="goHotel(hotel.id_hotel, currentPoblation.ubi_lat, currentPoblation.ubi_long)" class="row hote_row">
+        <div (click)="goHotel(hotel.id_hotel, currentPoblation.ubi_lat, currentPoblation.ubi_long, currentPoblation.nombre)" class="row hote_row">
           <div class="col-8">
             <h5 class="name_hotel">{{listaHotelesFiltrados.indexOf(hotel)+1}}. {{hotel.nombre}}</h5>
           </div>
