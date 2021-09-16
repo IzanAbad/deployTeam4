@@ -1,0 +1,58 @@
+.container-fluid {color: white;
+  max-height: 100%;}
+.filtrado {max-height: 560px;
+  padding-top: 5px;
+  box-shadow: 0 0 15px #2b303b;}
+.filtrado::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+.filtrado::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+.filtrado::-webkit-scrollbar-thumb:hover {
+  background: #b3b3b3;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+.filtrado::-webkit-scrollbar-thumb:active {
+  background-color: #999999;
+}
+.filtrado::-webkit-scrollbar-track {
+  background: #4e4d4d;
+  border-radius: 4px;
+}
+.filtrado::-webkit-scrollbar-track:hover, .filtrado::-webkit-scrollbar-track:active {background: #6b6b6b;}
+.btn-primary {background-color: #017bab;}
+.filtrado, .mapita, .listado {margin-bottom: 7px;}
+.city {margin-bottom: 10px;}
+.apartado {margin-left: 5px;}
+.row {max-height: 100%;}
+.row1 {margin-left: 1.3px;
+  width: 100%;}
+.div_price {display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom:2px}
+.lbl_price {font-size:small;
+  margin-right: 5px;}
+#sel_min {margin-left: 2.2px;}
+.lbl_apartado {margin-top: 5px;
+  margin-bottom: 5px;}
+.form-select-sm {width: 100px;}
+.hotelito {background-color: #2b303b;
+  box-shadow: 0 0 10px #2b303b;
+  margin-bottom: 10px;}
+.hotelito:hover {box-shadow: 0 0 15px #017bab;}
+.col-cat {padding-top: 6px;
+  padding-left: 0px;}
+.hote_row {cursor: pointer;}
+.estrellas {-webkit-text-stroke: 0.3px black;
+  font-size: large;
+  font-weight: bold;
+  color: yellow;
+  margin-right: 5px;}
+.name_hotel {padding-top: 5px;
+  margin-right: 10px;
+  color: white;}
+.bi-star-fill {padding-bottom: 5px;}

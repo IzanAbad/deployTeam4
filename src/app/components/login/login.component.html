@@ -1,0 +1,9 @@
+<section class="form-login">
+  <h5>Iniciar sesión</h5>
+  <input class="controls" type="text" name="usuario" value="" placeholder="Usuario" [(ngModel)]="form.username">
+  <input class="controls" type="password" name="contrasena" value="" placeholder="Contraseña" [(ngModel)]="form.password">
+  <input class="buttons" type="submit" name="" value="Ingresar" (click)="onSubmit()">
+  <p><a href="signup">Registrarme</a></p>
+</section>
+<br>
+<p *ngIf="isLoginFailed==true" style="color: red; text-align: center;">{{errorMessage}}</p>

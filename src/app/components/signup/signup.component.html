@@ -1,0 +1,12 @@
+
+<section class="form-login-register">
+  <h5>Crear cuenta</h5>
+  <input class="controls" type="text" name="nombre" value="" placeholder="Nombre" [(ngModel)]="form.username">
+  <input class="controls" type="password" name="contrasena" value="" placeholder="Contraseña" [(ngModel)]="form.password">
+  <input class="controls" type="password" name="contrasena" value="" placeholder="Repita la contraseña" [(ngModel)]="conf_password">
+  <input class="buttons" type="submit" name="" value="Crear cuenta" (click)="onSubmit()">
+  <p><a href="login">Ya tengo una cuenta</a></p>
+</section>
+<br>
+<br>
+<p *ngIf="isSignUpFailed==true" style="color: red; text-align: center;">{{errorMessage}}</p>
