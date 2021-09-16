@@ -22,18 +22,6 @@ export class BusquedaComponent implements OnInit {
   {
     nombre: 'Zaragoza',
     foto: "https://static1.abc.es/Media/201509/24/Zaragoza--644x362.jpg"
-  },
-  {
-    nombre: 'Sevilla',
-    foto: "https://static.retema.es/media/images/noticias/Ij2f9AbTSKPE8gTsrhv2R96v1t7c3fSW.jpg"
-  },
-  {
-    nombre: 'Madrid',
-    foto: "https://viajes.nationalgeographic.com.es/medio/2021/05/12/madrid_987c90d2_1254x836.jpg"
-  },
-  {
-    nombre: 'Girona',
-    foto: "https://www.ajuntament.gi/wp-content/uploads/2019/03/imagen-de-la-ciudad-de-gerona-1024x683.jpg"
   }];
 
   constructor(private router: Router, private carConfig: NgbCarouselConfig) {
