@@ -42,8 +42,8 @@ export class FiltradoComponent implements OnInit {
   // Hotel que tendra los atributos que se marquen en el filtrado
   hotel_filtrado: any = {
     categoria: [false, false, false, false, false],
-    precio_min: 0,
-    precio_max: 0,
+    precio_min: '0',
+    precio_max: '0',
     valoracion: [false, false, false, false],
     distancia: 1000
   }
@@ -142,16 +142,19 @@ export class FiltradoComponent implements OnInit {
     this.listaCategorias = [];
     this.listaHotelesFiltrados = this.listaAllHotels.slice();
 
-    console.log("Al aplicar los filtros: "+this.hotel_filtrado.valoracion);
-    console.log("Al aplicar los filtros: "+this.hotel_filtrado.categoria)
-
     // Recorremos la lista de todos los hoteles y vamos aplicando los filtros
     for(let i=0;i<this.listaAllHotels.length;i++){
       console.log("Estamos estudiando el hotel "+this.listaAllHotels[i].nombre);
       this.eliminarPorDist(this.listaAllHotels[i]);
-      this.eliminarPorCat(this.listaAllHotels[i]);
-      this.eliminarPorPrecio(this.listaAllHotels[i]);
-      this.eliminarPorVal(this.listaAllHotels[i]);
+      if(this.listaHotelesFiltrados.indexOf(this.listaAllHotels[i])!=-1){
+        this.eliminarPorCat(this.listaAllHotels[i]);
+      }
+      if(this.listaHotelesFiltrados.indexOf(this.listaAllHotels[i])!=-1){
+        this.eliminarPorPrecio(this.listaAllHotels[i]);
+      }
+      if(this.listaHotelesFiltrados.indexOf(this.listaAllHotels[i])!=-1){
+        this.eliminarPorVal(this.listaAllHotels[i]);
+      }
     }
 
     // Al salir del for anterior tenemos que tener en la lista hotelesFiltrados los que cumplen las condiciones
@@ -200,15 +203,18 @@ export class FiltradoComponent implements OnInit {
     }
     if(condicion==true && estanSelected==true){
       // Si no se ha cambiado el valor de condicion y hay algun checkbox seleccionado, eliminamos el hotel
+      console.log("Eliminado el Hotel por Cat: "+hotel.nombre);
       this.listaHotelesFiltrados.splice(this.listaHotelesFiltrados.indexOf(hotel), 1);
     }
   }
 
   eliminarPorPrecio(hotel: Hotel){
-    if(this.hotel_filtrado.precio_min!=0 && hotel.precio_noche<this.hotel_filtrado.precio_min){
+    if(parseInt(this.hotel_filtrado.precio_min)!=0 && hotel.precio_noche<parseInt(this.hotel_filtrado.precio_min)){
+      console.log("Eliminado el Hotel por Min: "+hotel.nombre);
       this.listaHotelesFiltrados.splice(this.listaHotelesFiltrados.indexOf(hotel), 1);
     }
-    if(this.hotel_filtrado.precio_max!=0 && hotel.precio_noche>this.hotel_filtrado.precio_max){
+    if(parseInt(this.hotel_filtrado.precio_max)!=0 && hotel.precio_noche>parseInt(this.hotel_filtrado.precio_max)){
+      console.log("Eliminado el Hotel por Max: "+hotel.nombre);
       this.listaHotelesFiltrados.splice(this.listaHotelesFiltrados.indexOf(hotel), 1);
     }
   }
@@ -238,6 +244,7 @@ export class FiltradoComponent implements OnInit {
     }
     if(condicion==true && estanSelected==true){
       // Si no ha coincidido con ninguna de las valoraciones seleccionadas y mininmo hay una seleccionada eliminamos el hotel
+      console.log("Eliminado el Hotel por Val: "+hotel.nombre);
       this.listaHotelesFiltrados.splice(this.listaHotelesFiltrados.indexOf(hotel), 1);
     }
   }
@@ -247,12 +254,14 @@ export class FiltradoComponent implements OnInit {
     if(this.hotel_filtrado.distancia=='11'){
       if(10>this.getDistancia(hotel.ubi_lat, hotel.ubi_long)){
         // Si la distancia es menor que 10 eliminamos este hotel de la lista
+        console.log("Eliminado el Hotel por dist: "+hotel.nombre);
         this.listaHotelesFiltrados.splice(this.listaHotelesFiltrados.indexOf(hotel), 1);
       }
     }else{
       // Si el filtro no es 11 quiere decir que buscamos que esten a menos km que el value del radio button
       // Si no hay ninguno clicado tenemos por defecto 1000km
       if(this.hotel_filtrado.distancia<this.getDistancia(hotel.ubi_lat, hotel.ubi_long)){
+        console.log("Eliminado el Hotel por dist: "+hotel.nombre);
         this.listaHotelesFiltrados.splice(this.listaHotelesFiltrados.indexOf(hotel), 1);
       }
     }
