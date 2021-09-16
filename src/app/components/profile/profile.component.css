@@ -1,4 +1,9 @@
+<<<<<<< Updated upstream
 .container {display: flex;
+=======
+.container {color: white;
+  display: flex;
+>>>>>>> Stashed changes
   flex-direction: row;
   justify-content: center;
   height: 500px;}
@@ -10,6 +15,10 @@
 .datos_div {width: 400px;}
 .ap {display: flex;
   flex-direction: row;}
+<<<<<<< Updated upstream
+=======
+.form-control-plaintext{color: white;}
+>>>>>>> Stashed changes
 .col-form-label {width: 180px;}
 #staticHistory {margin-top: 5px;
   resize: none;}

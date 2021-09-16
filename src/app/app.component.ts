@@ -7,7 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Hotel Searcher';
+<<<<<<< Updated upstream
   isLoggedIn = true;
+=======
+  currentUser = '';
+  isLoggedIn = false;
+
+  constructor() { }
+>>>>>>> Stashed changes
 
   logOut(){
     this.isLoggedIn=false;

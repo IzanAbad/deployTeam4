@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 .container {height: 640px;
   display: flex;
   flex-direction: column;
@@ -7,3 +8,157 @@
   display: flex;
   flex-direction: column;
   justify-content: center;}
+=======
+
+.row {height: 88.8vh;
+  display: flex;
+  flex-direction: row;
+  padding-left: 0;
+  padding-right: 0;
+  margin-right: 0;}
+.foto-fondo-1 {background: no-repeat;
+  background-image: url("https://s1.1zoom.me/big0/79/Ghent_Belgium_Houses_Evening_Street_Fence_Bicycle_524848_1280x770.jpg");
+  background-size: cover;
+  background-position: 0px 0px;}
+.foto-fondo-2 {background: no-repeat;
+  background-image: url("../../../../img/Moscow.png");
+  background-size: cover;
+  background-position: 0px 0px;
+  padding-right: 0;
+  margin-right: 0;}
+.container {height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #4e4d4d;
+  margin: 0;
+  padding: 0;
+}
+
+
+.container-4 {
+  overflow: hidden;
+  width: 90%;
+  height: 20%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  background-color: #4e4d4d;}
+.container-fotos {width: 95%;
+  height: 30%;}
+.titulo {width: 50%;
+  height: 30%;
+  background: no-repeat;
+  background-image: url(../../../../img/nomad.png);
+  background-position: center;
+  background-size: contain;}
+.container-4 input#search{
+  width: 80%;
+  height: 50px;
+  background: #2b303b;
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: #fff;
+  padding-left: 15px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.container-4 input#search::-webkit-input-placeholder {
+  color: #65737e;
+}
+
+.container-4 input#search:-moz-placeholder { /* Firefox 18- /
+  color: #65737e;
+}
+
+.container-4 input#search::-moz-placeholder {  / Firefox 19+ */
+  color: #65737e;
+}
+
+.container-4 input#search:-ms-input-placeholder {
+  color: #65737e;
+}
+.container-4 button.icon{
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+  border: none;
+  background: #232833;
+  height: 50px;
+  width: 50px;
+  color: #4f5b66;
+  opacity: 0;
+  font-size: 10pt;
+
+  -webkit-transition: all .55s ease;
+  -moz-transition: all .55s ease;
+  -ms-transition: all .55s ease;
+  -o-transition: all .55s ease;
+  transition: all .55s ease;
+}
+.container-4:hover button.icon, .container-4:active button.icon, .container-4:focus button.icon{
+  outline: none;
+  opacity: 1;
+  margin-left: -50px;
+}
+
+.container-4:hover button.icon:hover{
+  background: white;
+}
+
+.container-carousel {display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20%;}
+
+ngb-carousel {
+  max-width: 700px;
+  margin: 5px 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+ngb-carousel img {
+  width: 70%;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.carousel-inner {
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.carousel-item {
+  display: flex !important;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1.2s ease-in-out, visibility 1.2s;
+  z-index: -1;
+}
+.carousel-item.active{
+  opacity: 1;
+  visibility: visible;
+  z-index: 10;
+}
+.carousel-indicators {
+  visibility: visible;
+  z-index: 100;
+}
+.picsum-img-wrapper {display: flex;
+  flex-direction: column;}
+>>>>>>> Stashed changes

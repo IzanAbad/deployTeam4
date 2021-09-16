@@ -15,7 +15,11 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'filtros/:ciudad', component: FiltradoComponent },
   { path: 'busqueda', component: BusquedaComponent },
+<<<<<<< Updated upstream
   { path: 'hotel-info/:name', component: HotelInfoComponent}
+=======
+  { path: 'hotel-info/:id/:lat/:long', component: HotelInfoComponent}
+>>>>>>> Stashed changes
 ];
 
 @NgModule({

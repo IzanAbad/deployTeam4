@@ -101,6 +101,7 @@
             ],
             "scripts": []
           }
+<<<<<<< Updated upstream
         },
         "cypress-run": {
           "builder": "@cypress/schematic:cypress",
@@ -132,9 +133,15 @@
               "devServerTarget": "frontalapp:serve:production"
             }
           }
+=======
+>>>>>>> Stashed changes
         }
       }
     }
   },
   "defaultProject": "frontalapp"
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes
